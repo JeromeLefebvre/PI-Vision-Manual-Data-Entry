@@ -18,6 +18,7 @@
 				btnWidth: 80,
 				btnHeight: 26,
 				btnText: "Update",
+				PWAHostNameText: "https://localhost/piwebapi",
 				showTimestamp: false,
 				showAttribute: true,
 				showFriendlyAttName: false,
@@ -73,7 +74,8 @@
 		this.onDataUpdate = dataUpdate;
 
 		function configChange(newConfig, oldConfig) {
-
+			baseUrl = scope.config.PWAHostNameText;
+			console.log(baseUrl);
 			if (newConfig && oldConfig && !angular.equals(newConfig, oldConfig)) {
 
 
@@ -181,7 +183,7 @@
 		};
 
 		function getStreamsConfig(datastreams) {
-
+			
 			var batchRequest = {};
 			_.each(datastreams, function (datastream, index) {
 				var getDataStreamURL = datastream.IsAttribute ? encodeURI(baseUrl + "attributes?path=" + datastream.Path) : encodeURI(baseUrl + "points?path=" + datastream.Path);
