@@ -257,7 +257,6 @@
 
 
 		scope.sendValues = function () {
-
 			scope.loading = true; //show button loading icon
 			scope.isBtnEnabled = false;
 			var streams = scope.runtimeData.streamList;
